@@ -125,9 +125,21 @@ VALUES
   (6,"Nunc mauris. Morbi non sapien molestie orci tincidunt adipiscing. Mauris","586455","Henegouwen","Chile","13","P.O. Box 198, 3338 Accumsan Rd.","mauris.blandit.mattis@protonmail.edu","Sonya Deleon","1-687-785-5858"),
   (10,"Sed auctor odio a purus. Duis elementum, dui quis accumsan","45482-75788","North Chungcheong","Nigeria","9","P.O. Box 895, 1091 Dictum Avenue","viverra.donec@hotmail.com","Fletcher Potts","1-305-511-4862"),
   (1,"Duis dignissim tempor arcu. Vestibulum ut eros non enim commodo","54374","Northern Territory","Peru","17","601-8990 Leo. St.","ipsum.cursus@outlook.org","Kelly West","(125) 405-5123");
-SELECT * FROM `mytable`;
-SELECT `postalZip` AS codigo_postal, `region` AS region, `country` AS pais FROM mytable;
-SELECT * FROM `mytable` WHERE `phone` = "(811)%";
-SELECT * FROM `mytable` WHERE `contry` BETWEEN ('Italy','Spain');
-SELECT COUNT(id) FROM `mytable`
-SELECT 
+SELECT * FROM mytable ORDER BY country;
+SELECT postalZip AS codigo_postal, region AS region, country AS pais FROM mytable;
+SELECT * FROM mytable WHERE phone LIKE "(811)%";
+SELECT * FROM mytable WHERE country = "Italy" OR country="Spain" ORDER BY country;
+SELECT COUNT(*) FROM mytable;
+SELECT region, country, postalZip FROM mytable WHERE id IN (SELECT id FROM mytable WHERE country IN ("Germany","Turkey"));
+SELECT MAX(id) FROM mytable;
+SELECT MIN(id) FROM mytable;
+SELECT country, COUNT(country) FROM mytable GROUP BY country;
+SELECT * FROM mytable ORDER BY postalZip LIMIT 10;
+DELETE FROM mytable WHERE country = "Singapore";
+UPDATE mytable SET country = "Spain" WHERE country = "España";
+
+
+
+
+
+
