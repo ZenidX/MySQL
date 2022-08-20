@@ -155,17 +155,9 @@ SELECT t1.department_id, t1.department_name, t2.first_name, t2.last_name
 SELECT t1.*,t2.*
 	FROM departments t1
     CROSS JOIN employees t2;
--- Problemas NO ME VA, NO ENTIENDO QUE HACE TAMPOCO 
--- Problemas NO ME VA, NO ENTIENDO QUE HACE TAMPOCO 
--- Problemas NO ME VA, NO ENTIENDO QUE HACE TAMPOCO 
--- Problemas NO ME VA, NO ENTIENDO QUE HACE TAMPOCO 
-SELECT first_name, last_name, commission_pcts, manager_id FROM employees WHERE manager_id IS NULL
+SELECT first_name, last_name, commission_pct, manager_id FROM employees WHERE manager_id IS NULL
 UNION
-SELECT first_name, last_name, commission_pcts, manager_id FROM employees WHERE commission_pct IS NULL;
--- Problemas NO ME VA, NO ENTIENDO QUE HACE TAMPOCO 
--- Problemas NO ME VA, NO ENTIENDO QUE HACE TAMPOCO 
--- Problemas NO ME VA, NO ENTIENDO QUE HACE TAMPOCO 
--- Problemas NO ME VA, NO ENTIENDO QUE HACE TAMPOCO 
+SELECT first_name, last_name, commission_pct, manager_id FROM employees WHERE commission_pct IS NULL;
 SELECT * FROM employees WHERE employee_id IN (SELECT employee_id FROM employees WHERE phone_number LIKE '650%');
 SELECT * FROM employees WHERE employee_id =  (SELECT employee_id FROM employees WHERE phone_number LIKE '650%' LIMIT 1);
 SELECT * FROM employees WHERE employee_id NOT IN (SELECT employee_id FROM employees WHERE phone_number LIKE '650%');
